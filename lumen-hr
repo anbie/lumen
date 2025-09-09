@@ -1,0 +1,188 @@
+# Lumen — Internal HR Portal
+
+_Last updated: <YYYY-MM-DD>_
+
+## Table of Contents
+1. Mission & Values
+2. Onboarding Guide (Day 0, Week 1, 30/60/90)
+3. How We Work
+4. Sample HR Policies
+5. Compliance Guardrails for a Dementia-Care Wearable
+
+---
+
+## 1) Mission & Values
+
+### Mission
+Restore confidence and safety for people with memory loss through dignified, privacy-first assistive technology.
+
+### Core values and how we behave
+- **Dignity**
+  - Use people-first language. Avoid deficit framing.
+  - Ship features that reduce stigma (visible indicators, discreet form factors).
+- **Consent**
+  - Get informed consent before recording or identifying anyone.
+  - Honor revocation fast. Build obvious ways to say “no.”
+- **Safety**
+  - Treat safety incidents as Sev-0 until proven otherwise.
+  - Test fall detection and SOS paths weekly in staging.
+- **Privacy by default**
+  - Process on-device first. Keep buffers short. Minimize collection.
+  - Default to opt-in. Log all access to PII/PHI.
+- **Caregiver empathy**
+  - Design flows for families with shared responsibilities and stress.
+  - Communicate clearly. No surprises.
+- **Clinical rigor**
+  - Separate product claims from hypotheses. Label pilots.
+  - Follow evidence and document acceptance criteria.
+- **Accessibility**
+  - Meet or exceed WCAG 2.2 AA for apps and portal.
+  - Provide non-voice and non-touch fallbacks.
+
+---
+
+## 2) Onboarding Guide
+
+### Day 0 (before start)
+- Sign offer, IP/Confidentiality, and policy acknowledgments in HRIS 🔧.
+- Complete employment eligibility (I-9 US or local equivalent) 🔧.
+- Background check per role 🔧.
+- Manager submits access request: email, SSO (<Okta/Azure AD>), groups.
+- IT ships laptop and accessories; enroll in MDM (<Jamf/Intune>).
+- Security creates least-privilege roles.
+
+### Week 1
+- Accounts:  
+  Email, SSO, HRIS <https://hris.lumen.corp>, payroll <provider> 🔧, benefits <carrier> 🔧, code repo (<GitHub/GitLab>), design (Figma), ticketing (<Jira>), device mgmt (<MDM>), incident tooling (<PagerDuty/OnCall>), docs (<Confluence/Notion>).
+- Mandatory training (complete within 7 days):  
+  Security 101, PHI/PII handling (HIPAA overview) 🔧, harassment prevention (by jurisdiction) 🔧, accessibility basics, AI usage policy, secure coding (if applicable).
+- Hardware provisioning:  
+  Laptop, test phone, pendant dev kit, chargers. Enable full-disk encryption. Screen lock ≤ 5 min.  
+  Read and e-sign Equipment Use & Return policy.
+- Meet your people:  
+  HR (<hr@lumen.corp>), IT Help (<it@lumen.corp>), Security (<security@lumen.corp>), Legal (<legal@lumen.corp>), People Manager, Clinical Advisor.
+
+### 30 / 60 / 90 days
+- **30**: Finish all training; read product safety SOPs; shadow one support call. Propose one privacy risk you see and a mitigation.
+- **60**: Own one SOP update or draft for your area. Add one Decision Record (ADR) in your team repo.
+- **90**: Pass access review; close onboarding goals with manager; document “How I operate” page.
+
+---
+
+## 3) How We Work
+
+- **Working hours**: Core hours <HH:MM–HH:MM local> 🔧. Flexible outside core to support caregivers. Record time off in HRIS.
+- **Meetings**: Default 25/50 minutes. Agenda in invite. Notes with decisions and owners.
+- **Docs by default**: Write first. Share drafts early. Use versioned folders. ADRs for decisions.
+- **Security**: MFA everywhere. No personal cloud. Report phish with one click.
+- **PR/External comms**: No public claims about clinical efficacy, safety, or regulatory status without Legal and Clinical sign-off 🔧. Do not discuss patient data, incidents, or roadmap externally.
+- **Incident mindset**: If you see something off (privacy, safety, ethics), open an incident within 15 minutes. Blameless postmortems within 5 business days.
+
+---
+
+## 4) Sample HR Policies (short form)
+
+Each policy lists Purpose, Scope, Rules, How to request, Links.
+
+### 4.1 Paid Time Off (PTO) & Sick Leave 🔧
+- **Purpose**: Rest and wellness.
+- **Scope**: All regular employees in <jurisdictions>.
+- **Rules**:  
+  PTO accrues at <X> hours/pay period with cap <Y>. Sick leave per <state/country law>. Local carryover rules apply. Manager approval required for PTO > 3 days. Sick time can be taken in 1-hour increments. No retaliation for sick use.
+- **How**: Request in HRIS ≥ 5 business days in advance (PTO). Sick leave ASAP by Slack/email + HRIS.
+- **Links**: PTO calendar; HRIS guide.
+
+### 4.2 Caregiver Leave 🔧
+- **Purpose**: Support employees caring for family.
+- **Scope**: Employees in <jurisdictions>; definitions per law.
+- **Rules**:  
+  Up to <N> weeks paid caregiver leave; runs concurrent with FMLA/CFRA where applicable. Documentation may be required. Scheduling flexible. Benefits continue during paid leave.
+- **How**: File request in HRIS; HR confirms eligibility and dates.
+- **Links**: Policy PDF; forms.
+
+### 4.3 Remote/Hybrid Work & Home-Office Stipend 🔧
+- **Purpose**: Enable safe, effective work.
+- **Scope**: Roles approved for <remote | hybrid | onsite>.
+- **Rules**:  
+  Maintain safe workspace; secure Wi-Fi; private area for PHI/PII calls. Stipend <$$/month> for Internet/ergonomics where allowed. Onsite days per team charter.
+- **How**: Manager approval; expense stipend via <Expensify/Concur>.
+- **Links**: Remote checklist; stipend FAQ.
+
+### 4.4 DEI & Anti-Harassment
+- **Purpose**: Safe, respectful workplace.
+- **Scope**: Everyone, including contractors.
+- **Rules**: Zero tolerance for harassment or discrimination. Multiple reporting paths: manager, HR, anonymous hotline <link>. Prompt, impartial investigation. No retaliation.
+- **How**: Report via HRIS case, hotline, or email.
+- **Links**: Policy; training.
+
+### 4.5 Code of Conduct
+- **Purpose**: Expected behavior.
+- **Scope**: All work activities and company spaces.
+- **Rules**:  
+  No recording or face ID use without consent. Avoid conflicts; disclose outside work. Vendor gifts ≤ <$limit> per year 🔧. Use company systems; follow export controls.
+- **How**: Ask Legal about conflicts; log gifts in registry.
+- **Links**: Gift log; conflict disclosure form.
+
+### 4.6 Data Privacy & Security
+- **Purpose**: Protect PII/PHI and proprietary data.
+- **Scope**: All systems and data.
+- **Rules**:  
+  Least privilege; MFA; encrypt data in transit/at rest. No production data in personal tools. PHI only in approved environments. Retention: follow schedule <link>. Geofenced no-record zones honored. Access logged and reviewed quarterly.
+- **How**: Request access via ticket; report incidents immediately.
+- **Links**: Data map; retention schedule; DPA templates.
+
+### 4.7 AI Usage Policy
+- **Purpose**: Safe, compliant AI use.
+- **Scope**: All employees and contractors.
+- **Rules**:  
+  Use only approved AI tools list. No customer or production data in public LLMs. Red-team sensitive prompts. Label AI-generated content in validation workflows. Keep model and data cards updated.
+- **How**: Request tool approval via Security; log evaluations.
+- **Links**: Approved tools; model card template.
+
+### 4.8 Incident Reporting (Security, Safety, Ethics)
+- **Purpose**: Fast response prevents harm.
+- **Scope**: All incidents or near misses.
+- **Rules**:  
+  Report within 15 minutes via <hotline/app>. 24/7 Security on-call. Preserve evidence. Comms run through IC only. Postmortem within 5 business days; action items tracked.
+- **How**: Pager <number/link>; fallback: <security@lumen.corp>.
+- **Links**: Severity matrix; runbooks.
+
+### 4.9 Expense & Travel Basics 🔧
+- **Purpose**: Spend responsibly.
+- **Scope**: Business expenses only.
+- **Rules**:  
+  Book through <tool>. Coach airfare; hotels ≤ <$cap>/night; per diem per <GSA/local> tables. Pre-approve trips > <$threshold>. Receipts required > <$amount>.
+- **How**: Submit in <tool> within 10 days.
+- **Links**: Policy; approver matrix.
+
+### 4.10 Equipment Return & Offboarding
+- **Purpose**: Secure exit.
+- **Scope**: Employees and contractors.
+- **Rules**:  
+  Return all gear within 5 days. HR and IT disable access on last day. Run data handover checklist. Keep personal data out of company systems.
+- **How**: HR coordinates; IT issues shipping labels.
+- **Links**: Offboarding checklist.
+
+---
+
+## 5) Compliance Guardrails for Lumen (Policy vs SOP)
+
+- **Consent cues**: Obtain and record consent for ID features; provide “do not identify me” mode. _Policy._
+- **Visible indicators**: LED + on-screen icon when sensing/recording; physical shutter on pendant. _Policy & SOP-Hardware._  
+  _SOP link_: <intra:/sop/hw/recording-indicators>
+- **Geofenced no-record zones**: Block sensing in marked locations; allow manual override only with logged justification. _Policy & SOP-App._  
+  _SOP link_: <intra:/sop/app/geofence>
+- **Rolling audio buffer**: 30–120 s max; auto-erase after on-device inference; no cloud by default. _Policy & SOP-FW._  
+  _SOP link_: <intra:/sop/fw/audio-buffer>
+- **Dataset governance**: Data inventory, lineage, consent tags, retention, deletion SLAs. _Policy & SOP-Data._  
+  _SOP link_: <intra:/sop/data/governance>
+- **Bias checks (face/voice)**: Demographically stratified tests; publish model cards; block deployment if parity thresholds unmet. _Policy & SOP-ML._  
+  _SOP link_: <intra:/sop/ml/bias-eval>
+- **Fall-detection QA**: Sensitivity/specificity gates; weekly simulated falls; partner site drills. _Policy & SOP-QA._  
+  _SOP link_: <intra:/sop/qa/fall-testing>
+- **Caregiver portal access controls**: RBAC, MFA, share revocation, audit trails; emergency access with justification. _Policy & SOP-Platform._  
+  _SOP link_: <intra:/sop/platform/rbac>
+- **Regulatory claims**: No therapeutic or diagnostic claims without Legal/Clinical review; follow FDA/FTC guidance for consumer health devices. _Policy._ 🔧
+- **Cross-border transfers**: Use SCCs/DPAs where applicable; local hosting if required. _Policy._ 🔧
+
+> This portal is guidance, not legal advice. Items marked 🔧 need local counsel or HR review.
